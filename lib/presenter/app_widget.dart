@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../routes.dart';
 
@@ -14,6 +15,6 @@ class _AppWidgetState extends State<AppWidget> {
       theme: ThemeData.dark(),
       initialRoute: '/',
       routes: Routes.routes,
-    );
+    ).modular();
   }
 }
