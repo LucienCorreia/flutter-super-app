@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_example/presenter/pages/home/widgets/card_widget.dart';
+
+import 'widgets/card_widget.dart';
 
 class HomePage extends StatelessWidget {
   @override
