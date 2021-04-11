@@ -5,9 +5,9 @@ class CardWidget extends StatelessWidget {
   final IconData icon;
 
   const CardWidget({
-    @required this.title,
-    @required this.icon,
-    Key key,
+    required this.title,
+    required this.icon,
+    Key? key,
   }) : super(key: key);
 
   @override
