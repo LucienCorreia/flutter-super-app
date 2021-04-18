@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   testWidgets('CardWidget', (WidgetTester tester) async {
     final icon = Icons.people;
-    final title = 'GitHub Users';
+    final title = 'Page';
 
     await tester.pumpWidget(
       MaterialApp(

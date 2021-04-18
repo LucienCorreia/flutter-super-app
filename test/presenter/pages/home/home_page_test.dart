@@ -12,6 +12,5 @@ void main() {
     );
 
     expect(find.byType(CardWidget), findsNWidgets(1));
-    expect(find.byKey(Key('card-github-users')), findsOneWidget);
   });
 }

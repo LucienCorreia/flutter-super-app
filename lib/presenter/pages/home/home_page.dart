@@ -19,9 +19,8 @@ class HomePage extends StatelessWidget {
               crossAxisCount: 2,
               children: [
                 CardWidget(
-                  key: Key('card-github-users'),
                   icon: Icons.people,
-                  title: 'GitHub Users',
+                  title: 'Page',
                 ),
               ],
             ),
