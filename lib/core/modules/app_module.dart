@@ -1,10 +1,15 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../http/http.dart';
 import 'home_module.dart';
 
 class AppModule extends Module {
   @override
-  final List<Bind> binds = [];
+  final List<Bind> binds = [
+    Bind(
+      (i) => Http(),
+    ),
+  ];
 
   @override
   final List<ModularRoute> routes = [
