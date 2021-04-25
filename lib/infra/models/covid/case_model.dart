@@ -1,5 +1,6 @@
 import 'package:faker/faker.dart';
-import 'package:flutter_example/domain/entities/covid/case_entity.dart';
+
+import '../../../domain/entities/covid/case_entity.dart';
 
 class CaseModel extends CaseEntity {
   CaseModel({

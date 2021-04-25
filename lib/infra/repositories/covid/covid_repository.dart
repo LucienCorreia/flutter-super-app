@@ -1,7 +1,6 @@
-import 'package:flutter_example/infra/datasources/covid/external_covid_datasource.dart';
-
 import '../../../domain/entities/covid/case_entity.dart';
 import '../../../domain/repositories/covid/covid_repository.dart';
+import '../../datasources/covid/external_covid_datasource.dart';
 
 class CovidRepository extends CovidRepositoryInterface {
   final ExternalCovidDatasourceInterface _externalCovidDatasource;

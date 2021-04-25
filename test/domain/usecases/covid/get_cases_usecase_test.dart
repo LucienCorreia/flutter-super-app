@@ -1,8 +1,4 @@
-import 'package:dio/dio.dart';
-import 'package:flutter_example/core/http/http.dart';
-import 'package:flutter_example/core/modules/app_module.dart';
 import 'package:flutter_example/core/modules/covid/case_module.dart';
-import 'package:flutter_example/core/modules/covid/covid_module.dart';
 import 'package:flutter_example/domain/entities/covid/case_entity.dart';
 import 'package:flutter_example/domain/usecases/covid/get_cases_usecase.dart';
 import 'package:flutter_example/external/datasources/mocks/covid/external_covid_datasource_mock.dart';

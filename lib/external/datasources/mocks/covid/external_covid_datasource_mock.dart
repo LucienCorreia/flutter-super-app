@@ -1,7 +1,6 @@
-import 'package:flutter_example/domain/entities/covid/case_entity.dart';
-import 'package:flutter_example/infra/models/covid/case_model.dart';
-
+import '../../../../domain/entities/covid/case_entity.dart';
 import '../../../../infra/datasources/covid/external_covid_datasource.dart';
+import '../../../../infra/models/covid/case_model.dart';
 
 class ExternalCovidDatasourceMock implements ExternalCovidDatasourceInterface {
   final List<CaseEntity> _cases = CaseModel.fakeList(300);
