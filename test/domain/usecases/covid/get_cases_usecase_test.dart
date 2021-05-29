@@ -1,8 +1,8 @@
-import 'package:flutter_example/core/modules/covid/case_module.dart';
-import 'package:flutter_example/domain/entities/covid/case_entity.dart';
-import 'package:flutter_example/domain/usecases/covid/get_cases_usecase.dart';
-import 'package:flutter_example/external/datasources/mocks/covid/external_covid_datasource_mock.dart';
-import 'package:flutter_example/infra/datasources/covid/external_covid_datasource.dart';
+import 'package:flutter_super_app/core/modules/covid/case_module.dart';
+import 'package:flutter_super_app/domain/entities/covid/case_entity.dart';
+import 'package:flutter_super_app/domain/usecases/covid/get_cases_usecase.dart';
+import 'package:flutter_super_app/external/datasources/mocks/covid/external_covid_datasource_mock.dart';
+import 'package:flutter_super_app/infra/datasources/covid/external_covid_datasource.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_modular_test/flutter_modular_test.dart';
 import 'package:flutter_test/flutter_test.dart';
