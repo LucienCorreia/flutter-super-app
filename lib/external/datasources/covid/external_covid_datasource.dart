@@ -1,9 +1,7 @@
-import 'package:flutter_example/infra/models/covid/case_model.dart';
-
 import '../../../core/http/http.dart';
-
 import '../../../domain/entities/covid/case_entity.dart';
 import '../../../infra/datasources/covid/external_covid_datasource.dart';
+import '../../../infra/models/covid/case_model.dart';
 
 class ExternalCovidDatasource implements ExternalCovidDatasourceInterface {
   final Http _http;
