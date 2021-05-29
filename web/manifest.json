@@ -1,6 +1,6 @@
 {
-    "name": "flutter_example",
-    "short_name": "flutter_example",
+    "name": "flutter_super_app",
+    "short_name": "flutter_super_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
