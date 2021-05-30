@@ -17,7 +17,7 @@ class ExternalCovidDatasourceMock implements ExternalCovidDatasourceInterface {
 
     if (search.isNotEmpty) {
       return _cases
-          .where((element) => element.country.startsWith(search))
+          .where((element) => element.country!.startsWith(search))
           .toList();
     }
 

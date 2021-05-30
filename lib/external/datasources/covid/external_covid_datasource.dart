@@ -27,9 +27,10 @@ class ExternalCovidDatasource implements ExternalCovidDatasourceInterface {
       queryParameters: queryParameters,
     );
 
-    final cases = (response.data as Iterable)
+    final cases = (response.data as Map<String, dynamic>)
+        .entries
         .map(
-          (e) => CaseModel.fromJson(e),
+          (e) => CaseModel.fromJson(e.value.values.first),
         )
         .toList();
 

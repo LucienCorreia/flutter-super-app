@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import 'widgets/card_widget.dart';
 
@@ -18,9 +19,12 @@ class HomePage extends StatelessWidget {
               crossAxisSpacing: 16,
               crossAxisCount: 2,
               children: [
-                CardWidget(
-                  icon: Icons.people,
-                  title: 'Page',
+                GestureDetector(
+                  onTap: () => Modular.to.pushNamed('/covid/cases'),
+                  child: CardWidget(
+                    icon: Icons.show_chart,
+                    title: 'COVID 19',
+                  ),
                 ),
               ],
             ),

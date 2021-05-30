@@ -4,16 +4,16 @@ import '../../../domain/entities/covid/case_entity.dart';
 
 class CaseModel extends CaseEntity {
   CaseModel({
-    required int iso,
-    required String country,
-    required int population,
+    required int? iso,
+    required String? country,
+    required int? population,
     required int confirmed,
     required int recovered,
     required int deaths,
     required DateTime updated,
   }) : super(
           iso: iso,
-          country: country,
+          country: country ?? 'Not Informed',
           population: population,
           confirmed: confirmed,
           recovered: recovered,
@@ -29,7 +29,7 @@ class CaseModel extends CaseEntity {
       confirmed: json['confirmed'],
       recovered: json['recovered'],
       deaths: json['deaths'],
-      updated: DateTime.parse(json['updated']),
+      updated: DateTime.now(),
     );
   }
 

@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 
 class CaseEntity extends Equatable {
-  final int iso;
-  final String country;
-  final int population;
+  final int? iso;
+  final String? country;
+  final int? population;
   final int confirmed;
   final int recovered;
   final int deaths;
@@ -30,7 +30,7 @@ class CaseEntity extends Equatable {
         updated,
       ];
 
-  num get percentConfirmedByPopulation => confirmed * 100 / population;
+  num get percentConfirmedByPopulation => population != null ? confirmed * 100 / population! : 0;
 
   num get percentRecoveredByConfirmed => recovered * 100 / confirmed;
   
