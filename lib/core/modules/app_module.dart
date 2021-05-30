@@ -8,6 +8,7 @@ class AppModule extends Module {
   final List<Bind> binds = [
     Bind(
       (i) => Http(),
+      isLazy: false,
     ),
   ];
 
