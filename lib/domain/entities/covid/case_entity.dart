@@ -30,9 +30,10 @@ class CaseEntity extends Equatable {
         updated,
       ];
 
-  num get percentConfirmedByPopulation => population != null ? confirmed * 100 / population! : 0;
+  num get percentConfirmedByPopulation =>
+      population != null ? confirmed * 100 / population! : 0;
 
   num get percentRecoveredByConfirmed => recovered * 100 / confirmed;
-  
+
   num get percentDeathsByPopulation => deaths * 100 / confirmed;
 }

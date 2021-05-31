@@ -9,13 +9,13 @@ class CovidModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-        ChildRoute(
-          '/',
-          child: (_, __) => Container(),
-        ),
-        ModuleRoute(
-          '/cases',
-          module: CaseModule(),
-        ),
-      ];
+    ChildRoute(
+      '/',
+      child: (_, __) => Container(),
+    ),
+    ModuleRoute(
+      '/cases',
+      module: CaseModule(),
+    ),
+  ];
 }
