@@ -8,11 +8,7 @@ class GetCasesUsecase {
     required CovidRepositoryInterface covidRepository,
   }) : _covidRepository = covidRepository;
 
-  Future<List<CaseEntity>> call({
-    String search = '',
-  }) async {
-    return await _covidRepository.getCases(
-      search: search,
-    );
+  Future<List<CaseEntity>> call() async {
+    return await _covidRepository.getCases();
   }
 }

@@ -12,6 +12,8 @@ class CasesPage extends StatefulWidget {
 }
 
 class _CasesPageState extends ModularState<CasesPage, CasesState> {
+  final searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -10,11 +10,7 @@ class CovidRepository extends CovidRepositoryInterface {
   }) : _externalCovidDatasource = externalCovidDatasource;
 
   @override
-  Future<List<CaseEntity>> getCases({
-    String search = '',
-  }) async {
-    return await _externalCovidDatasource.getCases(
-      search: search,
-    );
+  Future<List<CaseEntity>> getCases() async {
+    return await _externalCovidDatasource.getCases();
   }
 }

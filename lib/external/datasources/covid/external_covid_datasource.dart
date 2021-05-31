@@ -15,22 +15,16 @@ class ExternalCovidDatasource implements ExternalCovidDatasourceInterface {
   }
 
   @override
-  Future<List<CaseEntity>> getCases({
-    String search = '',
-  }) async {
-    final queryParameters = {
-      'country': search,
-    };
+  Future<List<CaseEntity>> getCases() async {
 
     final response = await _http.get(
       '/cases',
-      queryParameters: queryParameters,
     );
 
     final cases = (response.data as Map<String, dynamic>)
         .entries
         .map(
-          (e) => CaseModel.fromJson(e.value.values.first),
+          (e) => CaseModel.fromJson(e.value.values.first)
         )
         .toList();
 
