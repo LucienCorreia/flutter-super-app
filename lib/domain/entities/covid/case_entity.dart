@@ -7,7 +7,7 @@ class CaseEntity extends Equatable {
   final int confirmed;
   final int recovered;
   final int deaths;
-  final DateTime updated;
+  final DateTime? updated;
 
   const CaseEntity({
     required this.iso,
