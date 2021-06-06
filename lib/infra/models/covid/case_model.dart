@@ -10,7 +10,7 @@ class CaseModel extends CaseEntity {
     required int confirmed,
     required int recovered,
     required int deaths,
-    required DateTime updated,
+    DateTime? updated,
   }) : super(
           iso: iso,
           country: country ?? 'Not Informed',
@@ -29,7 +29,6 @@ class CaseModel extends CaseEntity {
       confirmed: json['confirmed'],
       recovered: json['recovered'],
       deaths: json['deaths'],
-      updated: DateTime.now(),
     );
   }
 
