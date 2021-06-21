@@ -24,7 +24,7 @@ class _CasesPageState extends ModularState<CasesPage, CasesState> {
       ),
       body: LoadNotifierBuilderWidget<List<CaseEntity>?>(
         valueListenable: controller.casesListenable,
-        onLoading: Center(
+        onLoading: (context) => Center(
           child: CircularProgressIndicator(),
         ),
         onError: (context, error) => Center(

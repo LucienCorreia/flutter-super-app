@@ -9,7 +9,9 @@ class LoadNotifierBuilderWidget<T> extends StatefulWidget {
     BuildContext context,
     Object error,
   ) onError;
-  final Widget onLoading;
+  final Widget Function(
+    BuildContext context,
+  ) onLoading;
   final Widget Function(
     BuildContext context,
     T value,
@@ -68,7 +70,7 @@ class _LoadNotifierBuilderWidgetState<T>
     }
 
     if (widget.valueListenable.state == LoadNotifierState.loading) {
-      return widget.onLoading;
+      return widget.onLoading(context);
     }
 
     return widget.onDone(context, value);
