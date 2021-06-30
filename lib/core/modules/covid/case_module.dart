@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_super_app/domain/usecases/covid/search_cases_usecase.dart';
 
 import '../../../domain/repositories/covid/covid_repository.dart';
 import '../../../domain/usecases/covid/get_cases_usecase.dart';
@@ -29,10 +30,14 @@ class CaseModule extends Module {
         covidRepository: i.get(),
       ),
     ),
+    Bind(
+      (i) => SearchCasesUsecase(),
+    ),
     // states
     Bind(
       (i) => CasesState(
         getCasesUsecase: i.get(),
+        searchCasesUsecase: i.get(),
       ),
     ),
   ];
