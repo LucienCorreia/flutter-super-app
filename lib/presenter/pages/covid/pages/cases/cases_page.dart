@@ -41,7 +41,8 @@ class _CasesPageState extends ModularState<CasesPage, CasesState> {
                 ? Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SearchBarWidget(
-                      textSearchBarListenable: controller.textSearchListenable,
+                      onChanged: (String value) =>
+                          controller.textSearchListenable.value = value,
                     ),
                   )
                 : Container(),
