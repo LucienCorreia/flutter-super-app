@@ -46,7 +46,7 @@ class CasesState extends ChangeNotifier {
     final cases = _casesListenable.value = await _getCasesUsecase();
 
     _casesListenable.value = _searchCasesUsecase(
-      cases: cases ?? [],
+      cases: cases,
       search: textSearch,
     );
   }
