@@ -1,7 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_super_app/domain/usecases/covid/search_cases_usecase.dart';
 
 import '../../../domain/repositories/covid/covid_repository.dart';
+import '../../../domain/usecases/covid/search_cases_usecase.dart';
 import '../../../domain/usecases/covid/get_cases_usecase.dart';
 import '../../../external/datasources/covid/external_covid_datasource.dart';
 import '../../../infra/datasources/covid/external_covid_datasource.dart';

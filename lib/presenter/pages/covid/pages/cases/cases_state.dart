@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter_super_app/domain/usecases/covid/search_cases_usecase.dart';
 
 import '../../../../../domain/entities/covid/case_entity.dart';
+import '../../../../../domain/usecases/covid/search_cases_usecase.dart';
 import '../../../../../domain/usecases/covid/get_cases_usecase.dart';
 import '../../../../widgets/load_notifier/load_notifier_listenable.dart';
 
