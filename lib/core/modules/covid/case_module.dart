@@ -7,7 +7,7 @@ import '../../../external/datasources/covid/external_covid_datasource.dart';
 import '../../../infra/datasources/covid/external_covid_datasource.dart';
 import '../../../infra/repositories/covid/covid_repository.dart';
 import '../../../presenter/pages/covid/pages/cases/cases_page.dart';
-import '../../../presenter/pages/covid/pages/cases/cases_state.dart';
+import 'cases/cases_value_notifier_module.dart';
 
 class CaseModule extends Module {
   @override
@@ -33,13 +33,6 @@ class CaseModule extends Module {
     Bind(
       (i) => SearchCasesUsecase(),
     ),
-    // states
-    Bind(
-      (i) => CasesState(
-        getCasesUsecase: i.get(),
-        searchCasesUsecase: i.get(),
-      ),
-    ),
   ];
 
   @override
@@ -47,6 +40,10 @@ class CaseModule extends Module {
     ChildRoute(
       '/',
       child: (_, __) => CasesPage(),
+    ),
+    ModuleRoute(
+      '/value-notifier',
+      module: CasesValueNotifierModule(),
     ),
   ];
 }
