@@ -25,7 +25,7 @@ class _CasesPageState extends ModularState<CasesPage, CasesState> {
         actions: [
           ValueListenableBuilder<bool>(
             valueListenable: controller.searchBarVisibleListenable,
-            builder: (context, showSearchBar, widget) => IconButton(
+            builder: (_, showSearchBar, widget) => IconButton(
               onPressed: () =>
                   controller.searchBarVisibleListenable.value = !showSearchBar,
               icon: Icon(showSearchBar ? Icons.close : Icons.search),
@@ -37,7 +37,7 @@ class _CasesPageState extends ModularState<CasesPage, CasesState> {
         children: [
           ValueListenableBuilder<bool>(
             valueListenable: controller.searchBarVisibleListenable,
-            builder: (context, showSearchBar, widget) => showSearchBar
+            builder: (_, showSearchBar, widget) => showSearchBar
                 ? Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SearchBarWidget(
@@ -50,15 +50,15 @@ class _CasesPageState extends ModularState<CasesPage, CasesState> {
           Expanded(
             child: LoadNotifierBuilderWidget<List<CaseEntity>?>(
               valueListenable: controller.casesListenable,
-              onLoading: (context) => Center(
+              onLoading: (_) => Center(
                 child: CircularProgressIndicator(),
               ),
-              onError: (context, error) => Center(
+              onError: (_, error) => Center(
                 child: Text('Ocorreu um erro ao carregar!'),
               ),
-              onDone: (context, cases) => ListView.builder(
+              onDone: (_, cases) => ListView.builder(
                 itemCount: cases!.length,
-                itemBuilder: (context, index) => CaseCardWidget(cases[index]),
+                itemBuilder: (_, index) => CaseCardWidget(cases[index]),
               ),
             ),
           ),
