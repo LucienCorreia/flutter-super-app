@@ -25,5 +25,7 @@ jobs:
         run: flutter analyze
       - name: Check format
         run: flutter format lib --set-exit-if-changed
+      - name: Build Runner
+        run: flutter pub run build_runner build
       - name: Tests
         run: flutter test

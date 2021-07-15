@@ -18,6 +18,8 @@ jobs:
           path: opt/hostedtoolcache/flutter
           key: ${{ runner.os }}-flutter
       # Tasks
+      - name: Build Runner
+        run: flutter pub run build_runner build
       - name: Tests
         run: flutter test --coverage
       # Tasks
