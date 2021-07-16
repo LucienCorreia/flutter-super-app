@@ -8,7 +8,7 @@ class CasesValueNotifierModule extends Module {
   final List<Bind> binds = [
     // states
     Bind(
-          (i) => CasesState(
+      (i) => CasesState(
         getCasesUsecase: i.get(),
         searchCasesUsecase: i.get(),
       ),
