@@ -7,5 +7,4 @@ class SearchBloc extends Bloc<String, String> {
   Stream<String> mapEventToState(String search) async* {
     yield search;
   }
-
 }
