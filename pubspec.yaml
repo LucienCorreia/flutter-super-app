@@ -26,6 +26,7 @@ dependencies:
   faker: ^2.0.0-rc.2
   flutter:
     sdk: flutter
+  flutter_bloc: ^7.0.1
   flutter_modular: ^3.1.0
   intl: ^0.17.0
 
@@ -35,9 +36,12 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
+  bloc_test: ^8.0.2
+  build_runner: ^2.0.6
   flutter_modular_test: ^1.0.1
   flutter_test:
     sdk: flutter
+  mockito: ^5.0.10
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

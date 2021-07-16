@@ -6,7 +6,7 @@ import '../../../../../../core/utils/extensions/number_extension.dart';
 class CaseCardWidget extends StatelessWidget {
   final CaseEntity caseEntity;
 
-  final confimedTextStyle = TextStyle(
+  final confirmedTextStyle = TextStyle(
     color: Colors.yellow[800],
     fontSize: 16,
     fontWeight: FontWeight.bold,
@@ -71,11 +71,11 @@ class CaseCardWidget extends StatelessWidget {
                       children: [
                         Text(
                           'Confirmed',
-                          style: confimedTextStyle,
+                          style: confirmedTextStyle,
                         ),
                         Text(
                           '${caseEntity.confirmed.decimal}',
-                          style: confimedTextStyle.copyWith(
+                          style: confirmedTextStyle.copyWith(
                             color: Colors.white,
                           ),
                         ),

@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 
 class SearchBarWidget extends StatelessWidget {
-  final ValueNotifier<String> textSearchBarListenable;
+  final String value;
+  final Function(String value) onChanged;
 
   const SearchBarWidget({
-    required this.textSearchBarListenable,
+    this.value = '',
+    required this.onChanged,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: TextEditingController(),
-      onChanged: (String value) => textSearchBarListenable.value = value,
+      controller: TextEditingController(text: value),
+      onChanged: onChanged,
     );
   }
 }
