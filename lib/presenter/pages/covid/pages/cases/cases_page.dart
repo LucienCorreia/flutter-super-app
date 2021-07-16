@@ -7,7 +7,7 @@ class CasesPage extends StatelessWidget {
   }) : super(
           key: key,
         );
-  
+
   static const Map<String, String> items = {
     'ValueNotifier': '/covid/cases/value-notifier',
     'BLoC': '/covid/cases/bloc',
@@ -21,7 +21,10 @@ class CasesPage extends StatelessWidget {
       ),
       body: ListView.builder(
         itemBuilder: (_, index) => ListTile(
-          title: Text('${items.keys.elementAt(index)}'),
+          key: Key('${items.keys.elementAt(index)}'),
+          title: Text(
+            '${items.keys.elementAt(index)}',
+          ),
           trailing: Icon(Icons.arrow_forward),
           onTap: () => Modular.to.pushNamed('${items.values.elementAt(index)}'),
         ),
