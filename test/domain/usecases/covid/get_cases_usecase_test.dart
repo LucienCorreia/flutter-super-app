@@ -27,6 +27,7 @@ void main() {
         ),
       ],
     );
+
     externalCovidDatasourceMock = Modular.get();
 
     when(externalCovidDatasourceMock.getCases())
