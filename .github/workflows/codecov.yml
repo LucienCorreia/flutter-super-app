@@ -18,6 +18,8 @@ jobs:
           path: opt/hostedtoolcache/flutter
           key: ${{ runner.os }}-flutter
       # Tasks
+      - name: Pub Get
+        run: flutter pub get
       - name: Build Runner
         run: flutter pub run build_runner build --delete-conflicting-outputs
       - name: Tests
