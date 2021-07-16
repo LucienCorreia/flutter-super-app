@@ -15,8 +15,6 @@ class CasesPage extends StatefulWidget {
 }
 
 class _CasesPageState extends ModularState<CasesPage, CasesState> {
-  final searchController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +54,10 @@ class _CasesPageState extends ModularState<CasesPage, CasesState> {
               builder: (_, state) {
                 if (state is CasesBlocStateFailure) {
                   return Center(
-                    child: Text('Ocorreu um erro ao carregar!'),
+                    child: Text(
+                      'Ocorreu um erro ao carregar!',
+                      key: Key('message-error'),
+                    ),
                   );
                 }
 
