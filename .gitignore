@@ -49,5 +49,5 @@ app.*.map.json
 coverage/
 
 # build runner
-*/*.mocks.dart
-*/*.g.dart
+**/*.mocks.dart
+**/*.g.dart
