@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter_super_app/domain/usecases/covid/get_cases_usecase.dart';
 import 'package:flutter_super_app/domain/usecases/covid/search_cases_usecase.dart';
 import 'package:mobx/mobx.dart';
@@ -49,9 +48,10 @@ abstract class CasesStateBase with Store {
     try {
       cases.addAll(await _getCasesUsecase());
       searchedCases.addAll(cases);
-      loading = false;
     } catch (e) {
       error = Exception('API error!');
+    } finally {
+      loading = false;
     }
   }
 
