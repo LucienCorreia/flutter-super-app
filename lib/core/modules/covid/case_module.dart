@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_super_app/core/modules/covid/cases/cases_mobx_module.dart';
 
 import 'cases/cases_bloc_module.dart';
 import 'cases/cases_value_notifier_module.dart';
@@ -49,6 +50,10 @@ class CaseModule extends Module {
     ModuleRoute(
       '/value-notifier',
       module: CasesValueNotifierModule(),
+    ),
+    ModuleRoute(
+      '/mobx',
+      module: CasesMobxModule(),
     ),
   ];
 }
