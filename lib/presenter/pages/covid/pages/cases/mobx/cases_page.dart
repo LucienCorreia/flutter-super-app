@@ -49,7 +49,10 @@ class _CasesPageState extends ModularState<CasesPage, CasesState> {
               builder: (_) {
                 if (controller.error != null) {
                   return Center(
-                    child: Text('${controller.error}'),
+                    child: Text(
+                      'Ocorreu um erro ao carregar!',
+                      key: Key('message-error'),
+                    ),
                   );
                 }
 
