@@ -11,6 +11,7 @@ class CasesPage extends StatelessWidget {
   static const Map<String, String> items = {
     'ValueNotifier': '/covid/cases/value-notifier',
     'BLoC': '/covid/cases/bloc',
+    'MobX': '/covid/cases/mobx',
   };
 
   @override

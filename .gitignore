@@ -47,3 +47,7 @@ app.*.map.json
 
 # Coverage
 coverage/
+
+# build runner
+**/*.mocks.dart
+**/*.g.dart
