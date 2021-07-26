@@ -8,7 +8,7 @@ class SearchCasesUsecase {
     return cases
         .where(
           (element) => element.country != null
-              ? element.country!.startsWith(search)
+              ? element.country!.toLowerCase().startsWith(search.toLowerCase())
               : false,
         )
         .toList();
