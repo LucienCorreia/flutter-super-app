@@ -12,6 +12,7 @@ class CasesPage extends StatelessWidget {
     'ValueNotifier': '/covid/cases/value-notifier',
     'BLoC': '/covid/cases/bloc',
     'MobX': '/covid/cases/mobx',
+    'Triple': '/covid/cases/triple',
   };
 
   @override
