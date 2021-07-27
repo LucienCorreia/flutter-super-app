@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'cases_state.dart';
-import '../widgets/search_bar_widget.dart';
-import '../widgets/case_card_widget.dart';
-import '../../../../../widgets/load_notifier/load_notifier_builder_widget.dart';
 import '../../../../../../domain/entities/covid/case_entity.dart';
+import '../../../../../widgets/load_notifier/load_notifier_builder_widget.dart';
+import '../widgets/case_card_widget.dart';
+import '../widgets/search_bar_widget.dart';
+import 'cases_state.dart';
 
 class CasesPage extends StatefulWidget {
   @override
