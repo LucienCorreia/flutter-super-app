@@ -56,7 +56,10 @@ class _CasesPageState extends ModularState<CasesPage, CasesState> {
                 child: CircularProgressIndicator(),
               ),
               onError: (_, error) => Center(
-                child: Text('Ocorreu um erro ao carregar!'),
+                child: Text(
+                  'Ocorreu um erro ao carregar!',
+                  key: Key('message-error'),
+                ),
               ),
               onState: (_, cases) => ListView.builder(
                 itemCount: cases.length,
