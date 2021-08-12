@@ -39,8 +39,11 @@ void main() {
     testWidgets(
         'Should load a listing covid cases, 300 items and toggle search bar',
         (WidgetTester tester) async {
-      when(externalCovidDatasourceMock.getCases())
-          .thenAnswer((_) => Future.value(CaseModel.fakeList(300)));
+      when(externalCovidDatasourceMock.getCases()).thenAnswer(
+        (_) => Future.value(
+          CaseModel.fakeList(300),
+        ),
+      );
 
       await tester.pumpWidget(
         buildTestableWidget(
@@ -59,14 +62,16 @@ void main() {
 
       final iconButtonFinder = find.byType(IconButton);
 
+      expect(((iconButtonFinder.evaluate().first.widget as IconButton).icon as Icon).icon, equals(Icons.search));
+
       await tester.tap(iconButtonFinder);
       await tester.pumpAndSettle();
 
-      expect((iconButtonFinder as IconButton).icon, equals(Icons.search));
+      expect(((iconButtonFinder.evaluate().first.widget as IconButton).icon as Icon).icon, equals(Icons.close));
     });
 
     testWidgets('Should show API error message', (WidgetTester tester) async {
-      when(externalCovidDatasourceMock.getCases()).thenThrow(Exception());
+      when(externalCovidDatasourceMock.getCases()).thenThrow((_) => Exception());
 
       await tester.pumpWidget(
         buildTestableWidget(
