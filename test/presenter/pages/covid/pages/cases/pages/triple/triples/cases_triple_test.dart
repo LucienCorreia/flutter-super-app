@@ -19,7 +19,7 @@ void main() {
   late MockExternalCovidDatasource externalCovidDatasourceMock;
 
   group('CasesTriple', () {
-    setUp(() {
+    setUpAll(() {
       initModules(
         [
           CaseModule(),
@@ -46,8 +46,9 @@ void main() {
           searchCasesUsecase: Modular.get(),
         );
       },
-      act: (triple) => null,
+      act: (triple) async => await triple.search(),
       expect: () => [
+        tripleState,
         tripleLoading,
         tripleState,
       ],
@@ -64,10 +65,9 @@ void main() {
           searchCasesUsecase: Modular.get(),
         );
       },
-      act: (triple) => triple.search('123456789'),
+      act: (triple) async => await triple.search('123456789'),
       expect: () => [
-        tripleLoading,
-        [],
+        tripleState,
         tripleLoading,
         tripleState,
       ],
@@ -84,8 +84,9 @@ void main() {
           searchCasesUsecase: Modular.get(),
         );
       },
-      act: (triple) => null,
+      act: (triple) async => await triple.search(),
       expect: () => [
+        tripleState,
         tripleLoading,
         tripleError,
       ],
