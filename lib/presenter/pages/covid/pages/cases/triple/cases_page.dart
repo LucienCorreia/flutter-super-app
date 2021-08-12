@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_triple/flutter_triple.dart';
 
 import '../../../../../../domain/entities/covid/case_entity.dart';
-import '../../../../../widgets/load_notifier/load_notifier_builder_widget.dart';
 import '../widgets/case_card_widget.dart';
 import '../widgets/search_bar_widget.dart';
 import 'cases_state.dart';
+import 'triples/cases_triple.dart';
+import 'triples/show_search_bar_triple.dart';
 
 class CasesPage extends StatefulWidget {
+  const CasesPage({Key? key}) : super(key: key);
+
   @override
   _CasesPageState createState() => _CasesPageState();
 }
 
 class _CasesPageState extends ModularState<CasesPage, CasesState> {
-  final searchController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,41 +25,44 @@ class _CasesPageState extends ModularState<CasesPage, CasesState> {
         title: Text('Covid-19 - Cases'),
         backgroundColor: Colors.blueGrey[900],
         actions: [
-          ValueListenableBuilder<bool>(
-            valueListenable: controller.searchBarVisibleListenable,
-            builder: (_, showSearchBar, widget) => IconButton(
-              onPressed: () =>
-                  controller.searchBarVisibleListenable.value = !showSearchBar,
-              icon: Icon(showSearchBar ? Icons.close : Icons.search),
+          TripleBuilder<ShowSearchBarTriple, Exception, bool>(
+            store: controller.showSearchBarTriple,
+            builder: (_, triple) => IconButton(
+              onPressed: () => controller.showSearchBarTriple.toggle(),
+              icon: Icon(triple.state ? Icons.close : Icons.search),
             ),
           ),
         ],
       ),
       body: Column(
         children: [
-          ValueListenableBuilder<bool>(
-            valueListenable: controller.searchBarVisibleListenable,
-            builder: (_, showSearchBar, widget) => showSearchBar
+          TripleBuilder<ShowSearchBarTriple, Exception, bool>(
+            store: controller.showSearchBarTriple,
+            builder: (_, triple) => triple.state
                 ? Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SearchBarWidget(
                       onChanged: (String value) =>
-                          controller.textSearchListenable.value = value,
+                          controller.searchTriple.update(value),
+                      value: controller.searchTriple.state,
                     ),
                   )
                 : Container(),
           ),
           Expanded(
-            child: LoadNotifierBuilderWidget<List<CaseEntity>?>(
-              valueListenable: controller.casesListenable,
+            child: ScopedBuilder<CasesTriple, Exception, List<CaseEntity>>(
+              store: controller.casesTriple,
               onLoading: (_) => Center(
                 child: CircularProgressIndicator(),
               ),
               onError: (_, error) => Center(
-                child: Text('Ocorreu um erro ao carregar!'),
+                child: Text(
+                  'Ocorreu um erro ao carregar!',
+                  key: Key('message-error'),
+                ),
               ),
-              onDone: (_, cases) => ListView.builder(
-                itemCount: cases!.length,
+              onState: (_, cases) => ListView.builder(
+                itemCount: cases.length,
                 itemBuilder: (_, index) => CaseCardWidget(cases[index]),
               ),
             ),
