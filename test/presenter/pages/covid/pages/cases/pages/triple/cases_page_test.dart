@@ -6,6 +6,7 @@ import 'package:flutter_super_app/core/modules/covid/cases/cases_triple_module.d
 import 'package:flutter_super_app/infra/datasources/covid/external_covid_datasource.dart';
 import 'package:flutter_super_app/infra/models/covid/case_model.dart';
 import 'package:flutter_super_app/presenter/pages/covid/pages/cases/triple/cases_page.dart';
+import 'package:flutter_super_app/presenter/pages/covid/pages/cases/triple/triples/cases_triple.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -36,6 +37,10 @@ void main() {
       externalCovidDatasourceMock = Modular.get();
     });
 
+    setUp(() {
+      Modular.dispose<CasesTriple>();
+    });
+
     testWidgets(
         'Should load a listing covid cases, 300 items and toggle search bar',
         (WidgetTester tester) async {
@@ -62,16 +67,25 @@ void main() {
 
       final iconButtonFinder = find.byType(IconButton);
 
-      expect(((iconButtonFinder.evaluate().first.widget as IconButton).icon as Icon).icon, equals(Icons.search));
+      expect(
+          ((iconButtonFinder.evaluate().first.widget as IconButton).icon
+                  as Icon)
+              .icon,
+          equals(Icons.search));
 
       await tester.tap(iconButtonFinder);
       await tester.pumpAndSettle();
 
-      expect(((iconButtonFinder.evaluate().first.widget as IconButton).icon as Icon).icon, equals(Icons.close));
+      expect(
+          ((iconButtonFinder.evaluate().first.widget as IconButton).icon
+                  as Icon)
+              .icon,
+          equals(Icons.close));
     });
 
     testWidgets('Should show API error message', (WidgetTester tester) async {
-      when(externalCovidDatasourceMock.getCases()).thenThrow((_) => Exception());
+      when(externalCovidDatasourceMock.getCases())
+          .thenThrow((_) => throw Exception());
 
       await tester.pumpWidget(
         buildTestableWidget(

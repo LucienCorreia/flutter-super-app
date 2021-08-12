@@ -35,6 +35,10 @@ void main() {
       externalCovidDatasourceMock = Modular.get();
     });
 
+    setUp(() {
+      Modular.dispose<CasesTriple>();
+    });
+
     storeTest<CasesTriple>(
       'Should state is an list of [CaseEntity] when successful',
       build: () {
