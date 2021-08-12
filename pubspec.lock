@@ -607,12 +607,10 @@ packages:
   triple_test:
     dependency: "direct dev"
     description:
-      path: triple_test
-      ref: HEAD
-      resolved-ref: "4d064283fa5a77d204fc4a3cceeae471e9817e9f"
-      url: "https://github.com/Flutterando/triple_pattern"
-    source: git
-    version: "0.0.6"
+      name: triple_test
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.8"
   typed_data:
     dependency: transitive
     description:
